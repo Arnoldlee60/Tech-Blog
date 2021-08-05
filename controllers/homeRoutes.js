@@ -6,8 +6,22 @@ const withAuth = require('../utils/auth'); //redirect to login if not logged in
 
 router.get('/', withAuth, async (req, res) => {
 //router.get('/',(req, res) => {
+  try {
+    const userData = await User.findAll({
+      attributes: { exclude: ['password'] },
+      order: [['email', 'ASC']],
+    });
 
-    res.render('test')
+    const users = userData.map((project) => project.get({ plain: true }));
+
+    res.render('test', {
+      users,
+      // Pass the logged in flag to the template
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
   });
 
   router.get('/login', (req, res) => {

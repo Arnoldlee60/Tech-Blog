@@ -20,9 +20,13 @@
     <div class="text-end">
       <button type="button" class="btn btn-primary"><a href="/" style="color: white;">Home</a></button>
       <button type="button" class="btn btn-primary"><a href="/" style="color: white;">Dashboard</a></button>
-      <button type="button" class="btn btn-primary" id="login"><a href="/login" style="color: white;">Login</a></button>
-      <button type="button" class="btn btn-primary" id="signup"><a href="/signup" style="color: white;">Sign-up</a></button>
-      <button type="button" id="logout" class="btn btn-primary">Logout</button>            
+ 
+      <!--<button type="button" class="btn btn-primary" id="signup"><a href="/signup" style="color: white;">Sign-up</a></button>-->
+      {{#if loggedIn}}
+      <button type="button" id="logout" class="btn btn-primary">Logout</button>    
+      {{else}}
+      <button type="button" class="btn btn-primary" id="login"><a href="/login" style="color: white;">Login</a></button>   
+      {{/if}}     
     </div>
   </div>
 </nav>
@@ -32,7 +36,8 @@
     </div>
   </main>
 
-
+{{#if loggedIn}}
   <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 </html>
