@@ -43,10 +43,6 @@ router.get('/', withAuth, async (req, res) => {
     res.render('signup');
   });
 
-  router.get('/logout', (req, res) => {
-    console.log("logged out")
-    //res.render('login')
-  });
 
   
 
