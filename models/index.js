@@ -29,6 +29,6 @@ Comment.belongsTo(Post, {
 
 
 
-module.exports = { User }
-module.exports = { Post }
-module.exports = { Comment }
+module.exports = { User, Post, Comment }
+// module.exports = { Post }
+// module.exports = { Comment }
