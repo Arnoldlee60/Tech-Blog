@@ -8,7 +8,7 @@ const withAuth = require('../utils/auth'); //redirect to login if not logged in
 router.get('/', withAuth, (req, res) => {
     Post.findAll({
       where: {
-        user_id: req.session.user_id
+        user_id: req.session.user_id //for finding specific person
       },
       attributes: [
         'id',

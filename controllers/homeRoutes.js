@@ -37,7 +37,7 @@ router.get('/', withAuth, async (req, res) => {
       const posts = dbPostData.map(post => post.get({ plain: true })); //posts is referred here on partials
       res.render('home', {
           posts,
-          loggedIn: req.session.loggedIn
+          loggedIn: req.session.loggedIn,
         });
     })
     .catch(err => {
