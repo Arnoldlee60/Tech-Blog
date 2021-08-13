@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
-//const sequelize = require('../config/connection');
+const sequelize = require('../config/connection');
 //const { Post } = require('../models'); later
 const withAuth = require('../utils/auth'); //redirect to login if not logged in
 
