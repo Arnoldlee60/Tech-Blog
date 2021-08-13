@@ -5,23 +5,45 @@ const { User } = require('../models');
 const withAuth = require('../utils/auth'); //redirect to login if not logged in
 
 router.get('/', withAuth, async (req, res) => {
-//router.get('/',(req, res) => {
-  try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] },
-      order: [['email', 'ASC']],
+  Post.findAll({
+    attributes: [
+      'id',
+      'title',
+      'created_at',
+      'post_content'
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: [
+        'id', 
+        'comment_text', 
+        'post_id', 
+        'user_id', 
+        'created_at'
+      ],
+        include: {
+          model: User,
+          attributes:['email']
+        }
+      },
+      {
+        model: User,
+        attributes: ['email']
+      }
+    ]
+  })
+    .then(dbPostData => {
+      const posts = dbPostData.map(post => post.get({ plain: true })); //posts is referred here on partials
+      res.render('home', {
+          posts,
+          loggedIn: req.session.loggedIn
+        });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
-
-    const users = userData.map((project) => project.get({ plain: true }));
-
-    res.render('home', {
-      users,
-      // Pass the logged in flag to the template
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
   });
 
   router.get('/login', (req, res) => {

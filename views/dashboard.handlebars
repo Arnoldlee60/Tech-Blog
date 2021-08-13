@@ -1,0 +1,21 @@
+<header><h1>Your Dashboard</h1></header> use for dashboard
+
+
+ {{!-- use partial here with the length thing --}}
+{{#if posts.length}}
+    </div>
+
+    {{#each posts as |post|}}
+        {{> post-info post}}
+        
+            
+        </div>
+    {{/each}}
+
+{{else}}
+<h6 class="pb-4 has-text-centered is-italic">you do not currently have any posts</h6>
+
+{{/if}}
+
+{{!-- button for adding stuff in  --}}
+ <div id="manipulate"> <button type="button" class="btn btn-primary" id="maniputlate">+ New Post</button></div>

@@ -1,4 +1,16 @@
-<header><h1>Your Dashboard</h1></header>
+<div>
+{{#each posts as |post|}} 
+
+{{> post-info post }}   
+{{!-- partial for all posts --}}
+{{else}}
+<h6 style="text-align: center;">There are no posts</h6>
+{{/each}}
+</div>
+
+
+
+{{!-- <header><h1>Your Dashboard</h1></header> use for dashboard --}}
 
 
 {{!-- use partial here with the length thing --}}
@@ -6,7 +18,7 @@
 
 
 {{!-- button for adding stuff in --}}
-<div id="manipulate"> 
+{{!-- <div id="manipulate"> 
     <button type="button" class="btn btn-primary" id="maniputlate">+ New Post</button>
-</div>
+</div> --}}
 
