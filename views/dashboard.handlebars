@@ -8,7 +8,7 @@
     {{#each posts as |post|}}
         {{> post-info post}}
         
-            
+            <a href="/dashboard/edit/{{post.id}}"><button class="btn btn-primary">edit post</button></a>
         </div>
     {{/each}}
 
