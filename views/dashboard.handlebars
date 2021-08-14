@@ -1,5 +1,5 @@
-<header><h1>Your Dashboard</h1></header> use for dashboard
-
+<header><h1>Your Dashboard</h1></header> 
+{{!-- use for dashboard --}}
 
  {{!-- use partial here with the length thing --}}
 {{#if posts.length}}
@@ -17,4 +17,4 @@
 {{/if}}
 
 {{!-- button for adding stuff in  --}}
- <div id="manipulate"> <button type="button" class="btn btn-primary" id="maniputlate">+ New Post</button></div>
+ <div id="manipulate"> <a href="/dashboard/create"><button type="button" class="btn btn-primary" id="maniputlate">+ New Post</button></a></div>

@@ -1,0 +1,32 @@
+<section>
+    <a href="/dashboard"><button>Back</button></a>
+  <h2 class="title">Create a new blog</h2><hr>
+
+<form class="create">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Title</label>
+    <input class="form-control input" id="title" aria-describedby="emailHelp" placeholder="Enter title" name="title">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Content</label>
+    <input class="form-control input" id="content" placeholder="Enter content" name="content">
+  </div>
+  <button type="submit" class="btn btn-primary" id="submit" onclick="test()">Submit</button>
+</form>
+{{!-- This came from a bootstrap example --}}
+</section>
+
+<script src="/js/createForm.js"></script>
+
+
+{{!-- <form class="new-post-form">
+    <div>
+      <label for="post-title">title:</label>
+      <input class="input" type="text" id="post-title" name="post-title" placeholder="insert blog title here"/>
+    </div>
+    <div>
+      <label for="post-content">content:</label>
+      <input class="textarea is-large" id="post-content" name="post-content" placeholder="insert blog content here"/>
+    </div>
+    <button type="submit" class="button is-primary is-pulled-right">create post</button>
+  </form> --}}
