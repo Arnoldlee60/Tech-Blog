@@ -2,14 +2,15 @@
 {{!-- use for dashboard --}}
 
  {{!-- use partial here with the length thing --}}
+
 {{#if posts.length}}
-    </div>
+
 
     {{#each posts as |post|}}
         {{> post-info post}}
         
             <a href="/dashboard/edit/{{post.id}}"><button class="btn btn-primary">edit post</button></a>
-        </div>
+            </div>
     {{/each}}
 
 {{else}}

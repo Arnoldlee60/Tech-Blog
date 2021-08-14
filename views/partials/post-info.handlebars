@@ -13,13 +13,15 @@
   </header>
 
     <div class="card-content">
-        <div class="content has-text-justified">
+        <div class="content has-text-justified" style="padding: 20px;">
             {{post_content}}
         </div>
-            <div class="is-pulled-right">
+            <div class="is-pulled-right" style="text-align: center;">
                 <b>{{user.email}}</b> | 
 
                  | {{format_date created_at}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
             </div>
         
     </div>
+{{!-- 
+no div here so edit can be inside the post --}}
