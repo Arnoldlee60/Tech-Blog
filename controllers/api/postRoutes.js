@@ -34,7 +34,7 @@ router.get('/', withAuth, (req, res) => {
       });
   });
 
-  router.post('/', withAuth, (req, res) => { //createForm
+router.post('/', withAuth, (req, res) => { //createForm
     Post.create({
       title: req.body.title,
       post_content: req.body.post_content,
@@ -46,6 +46,70 @@ router.get('/', withAuth, (req, res) => {
         res.status(500).json(err);
       });
 });
+
+//post/1
+router.get('/:id', (req, res) => {
+    Post.findOne({
+      where: {
+        id: req.params.id
+      },
+      attributes: [
+        'id',
+        'title',
+        'created_at',
+        'post_content'
+      ],
+      include: [
+        {
+          model: User,
+          attributes: ['email']
+        },
+        {
+          model: Comment,
+          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+          include: {
+            model: User,
+            attributes: ['email']
+          }
+        }
+      ]
+    })
+      .then(dbPostData => {
+        if (!dbPostData) {
+          res.status(404).json({ message: 'Error' });
+          return;
+        }
+        res.json(dbPostData);
+      })
+      .catch(err => {
+        res.status(500).json(err);
+      });
+  });
+
+
+
+// post/1
+router.put('/:id', withAuth, (req, res) => {
+    Post.update({
+        title: req.body.title,
+        post_content: req.body.post_content
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(dbPostData => {
+        if (!dbPostData) {
+          res.status(404).json({ message: 'Error' });
+          return;
+        }
+        res.json(dbPostData);
+      })
+      .catch(err => {
+        res.status(500).json(err);
+      });
+  });
 
 
   module.exports = router;

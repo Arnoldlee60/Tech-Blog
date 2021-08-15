@@ -1,0 +1,28 @@
+
+{{#if loggedIn}}
+{{> post-info post}}
+
+
+{{!-- {{#if loggedIn}} can still see if loggled in --}}
+<form class="comment-form">
+  <div>
+      <br>
+    <h4 style="text-align: center;">Comment</h4>
+    <input class="form-control input" placeholder="Comment" name="comment">
+  </div>
+
+  <div style="text-align: right; margin-right: 20px; margin-top: 5px">
+    <button class="btn btn-primary" type="submit">Post</button>
+  </div>
+  
+</form>
+
+
+{{> comments post.comments}} 
+
+<script src="/js/comment.js"></script>
+
+{{else}}
+    <h1 style="text-align: center;"><a href="/login">Click to login!</a></h1>
+
+{{/if}}

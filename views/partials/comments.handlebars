@@ -1,11 +1,11 @@
 <div class="comments">
   {{#each this}}
   <section class="comment">
-    <div class="meta">
-      {{user.email}} on {{format_date created_at}}
+    <div class="meta" style="text-align: center;">
+      Comment from {{user.email}} on {{format_date created_at}} at {{format_time created_at}}
     </div>
-    <div class="text">
-      {{comment_text}}
+    <div class="text" style="margin: 20px;">
+      >{{comment_text}}
     </div>
   </section>
   {{/each}}
