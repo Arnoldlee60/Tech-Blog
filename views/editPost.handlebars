@@ -1,0 +1,31 @@
+<article>
+  <a href="/dashboard" class="is-pulled-right"> &larr; back to dashboard</a>
+  <h4 style="text-align: center; margin-top: 100px">Edit Post</h4>
+  <form class="edit-post-form" style="text-align: center;">
+    <div>
+        <label for="post-title">Change Title?</label>
+      <input class="input" name="post-title" type="text" value="{{post.title}}" />
+    </div>
+    <div>
+        <label for="post-content">Change Content?:</label>
+      <input class="input" name="post-content" type="text" value="{{post.post_content}}" />
+    </div>
+    <div class="is-pulled-right" >
+       Created on {{format_date post.created_at}} at {{format_time post.created_at}} with
+      
+      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+    </div>
+    <br>
+    <button type="submit" class="button">Save Post</button>
+    <button type="button" class="button delete-post-btn">Delete Post?</button>
+    <div style="margin-bottom: 30px;"></div>
+  </form>
+</article>
+
+{{> comments post.comments}}
+
+
+
+<script src="/js/edit.js"></script>
+<script src="/js/delete.js"></script>
+<script src="/js/comment.js"></script>
