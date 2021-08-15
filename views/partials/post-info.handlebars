@@ -17,9 +17,7 @@
             {{post_content}}
         </div>
             <div class="is-pulled-right" style="text-align: center;">
-                <b>{{user.email}}</b> | 
-
-                 | {{format_date created_at}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+                <b>{{user.email}}</b> | {{format_date created_at}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
             </div>
         
     </div>
