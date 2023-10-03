@@ -1,57 +1,33 @@
-README.md
-  
-Tech Blog  
-================
-Licences
-================
+# Tech Blog
 
+## Table of Contents
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contribution](#contribution)
+- [Test](#test)
+- [Additional Links](#additional-links)
 
-Table of Contents
-================
-[Description](desc)
+## Description
 
-[Installation](installation)
+This project is a website that allows users to create and share blog posts on various topics. Users can also receive comments on their posts, fostering discussions and interactions within the community.
 
-[Usage](usage)
+## Installation
 
-[Licence](#licence)
+To run this project, you will need the following dependencies:
 
-[Contribution](#contribution)
+- bcrypt
+- connect-session-sequelize
+- dotenv
+- express
+- express-handlebars
+- express-session
+- handlebars
+- mysql2
+- sequelize
 
-[Test](#test)
+Make sure to install these dependencies using a package manager like npm:
 
-#Description
-================
-This project is a website that you can blog about anything and be able to recieve comments.
-
-
-#Installation
-================
-bcrypt, connect-session-sequelize, dotenv, express, express-handlebars, express-session, handlebars, mysql2, sequelize
-
-
-#Usage
-================
-You can talk about a subject and have other reply in the comments
-
-
-#Licence
-================
-None
-
-
-#Contribution
-================
-n.a
-
-
-#Test
-================
-1. sign up for an account 2. Log in 3. View posts on the front page 4. Visit your dash and be able to create your own posts.
-
-
-Additional links
-================
-https://github.com/arnoldlee60
-
-arnoldlee60@gmail.com
+```bash
+npm install bcrypt connect-session-sequelize dotenv express express-handlebars express-session handlebars mysql2 sequelize
