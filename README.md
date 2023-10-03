@@ -29,5 +29,30 @@ To run this project, you will need the following dependencies:
 
 Make sure to install these dependencies using a package manager like npm:
 
-```bash
 npm install bcrypt connect-session-sequelize dotenv express express-handlebars express-session handlebars mysql2 sequelize
+
+## Usage
+
+You can use this platform to write about a subject of your choice and engage with other users through comments and discussions.
+
+## License
+
+This project is under the "None" license.
+
+## Contribution
+
+Contributions to this project are not applicable at the moment.
+
+## Test
+
+To test the functionality of the platform, follow these steps:
+
+1. Sign up for an account.
+2. Log in with your credentials.
+3. View posts on the front page.
+4. Visit your dashboard and create your own posts.
+
+## Additional Links
+
+- [GitHub Repository](https://github.com/arnoldlee60)
+- Email: arnoldlee60@gmail.com
